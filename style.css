@@ -1,0 +1,248 @@
+* {
+    all: unset;
+}
+
+base, basefont, datalist, head, meta, script, style, title, noembed, param, template {
+    display: none;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: canada-type-gibson, sans-serif;
+  background-color: black;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-gap: 0px;
+}
+
+h1 {
+  background-color:black;
+  color:white;
+  text-align: center;
+  grid-column: col-start / span 12;
+  height:5rem;
+  line-height: 5rem;
+  font-size: 2.5rem;
+}
+
+.radio-menu {
+    padding: 0;
+    margin: 0;
+    grid-column: col-start / span 12;
+    display:flex;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.radio-menu li {
+    color:white;
+    height:6rem;
+    list-style: none;
+    font-family: canada-type-gibson, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size:2.2rem;
+    text-align: center;
+    line-height: 6rem;
+    width:50%;
+    transition: background .1s ease-out;
+    overflow:hidden;
+}
+
+.radio-menu li a {
+  display:block;
+}
+
+.p1 { background-color: rgba(255,100,0,.8) ;}
+.p1:hover { background-color: rgba(255,100,0,1) ;}
+.p1.now-playing { background-color: rgba(255,100,0,1) ;}
+.p2 { background-color: rgba(0, 50, 150, .8) ;}
+.p2:hover { background-color: rgba(0, 50, 150, 1) ;}
+.p2.now-playing { background-color: rgba(0, 50, 150, 1) ;}
+.p3 { background-color: rgba(140,160,160,.8) ;}
+.p3:hover { background-color: rgba(140,160,160,1) ;}
+.p3.now-playing { background-color: rgba(140,160,160,1) ;}
+.p4 { background-color: rgba(255,160,0,.8) ;}
+.p4:hover { background-color: rgba(255,160,0,1) ;}
+.p4.now-playing { background-color: rgba(255,160,0,1) ;}
+.p5 { background-color: rgba(210,0,90,.8) ;}
+.p5:hover { background-color: rgba(210,0,90,1) ;}
+.p5.now-playing { background-color: rgba(210,0,90,1) ;}
+.p6 { background-color: rgba(80,75,80,.8) ;}
+.p6:hover { background-color: rgba(80,75,80,1) ;}
+.p6.now-playing { background-color: rgba(80,75,80,1) ;}
+.p7 { background-color: rgba(0,160,140,.8) ;}
+.p7:hover { background-color: rgba(0,160,140,1) ;}
+.p7.now-playing { background-color: rgba(0,160,140,1) ;}
+.p8 { background-color: rgba(115,45,140,.8) ;}
+.p8:hover { background-color: rgba(115,45,140,1) ;}
+.p8.now-playing { background-color: rgba(115,45,140,1) ;}
+li.nyheder {background-color: rgba(255,30,0,.8); width:100%;}
+li.nyheder:hover {background-color: rgba(255,30,0,1);}
+li.nyheder.now-playing {background-color: rgba(255,30,0,1);}
+
+.now-playing a {
+  animation-name: nowPlaying;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.nyheder.now-playing a {
+  animation-name: nowPlayingNyheder;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes nowPlaying {
+    0% {
+          transform: scale(1) rotate(0deg);}
+    50% {
+        transform: scale(1.2) rotate(180deg);}
+    100% {
+        transform: scale(1) rotate(360deg);}
+}
+
+@keyframes nowPlayingNyheder {
+    0% {
+          transform: scale(1);}
+    50% {
+        transform: scale(1.2);}
+    100% {
+        transform: scale(1);}
+}
+
+
+
+.playPause {
+  grid-column: col-start / span 3;
+  background-color: black;
+  color: white;
+  line-height: 5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.setVolume {
+  grid-column: col-start 4 / span 9;
+  background-color:black;
+  height:5rem;
+  padding-right: 1rem;
+}
+
+/* Volume slider reset */
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: .5rem solid rgba(255,255,255,.2);
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -.5rem;  You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  border: .5rem solid rgba(255,255,255,.2);
+  height: .7rem;
+  width: .7rem;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  border: .5rem solid rgba(255,255,255,.2);
+  height: .7rem;
+  width: .7rem;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: .5rem;
+  cursor: pointer;
+  background: red;
+  background:linear-gradient(to right, black, red);
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background:linear-gradient(to right, black, red);
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: .5rem;
+  cursor: pointer;
+  background: red;
+  background:linear-gradient(to right, black, red);
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: .5rem;
+  cursor: pointer;
+  background:transparrent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background:linear-gradient(to right, black, red);
+}
+input[type=range]:focus::-ms-fill-lower {
+  background:linear-gradient(to right, black, red);
+}
+input[type=range]::-ms-fill-upper {
+  background:black;
+
+}
+input[type=range]:focus::-ms-fill-upper {
+  background:black;
+}
+
+
+#audioPlayer {
+  display: none;
+}
