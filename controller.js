@@ -144,6 +144,11 @@ document.getElementById('settings-button').addEventListener('click', function(){
   }
 }, false);
 
+document.getElementById('closeSettings').addEventListener('click', function(){
+  var settings = document.getElementById('settings');
+  settings.className = 'settings hide';
+}, false);
+
 document.getElementById('highQuality').addEventListener('click', function(){
   setQuality('high');
 }, false);
