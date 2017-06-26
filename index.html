@@ -15,8 +15,18 @@
     <a href="#" id="popUpPlayer" title="Pop up" class="pop-up-button"><span>Pop up</span></a>
     <ul class="radio-menu" id="radioMenu">
     </ul>
-      <a href="#" id="playPause" class="play playPause">Play</a>
-      <input class="setVolume" id="setVolume" type="range" min="0" max="100" step="1" oninput="setVolume(this.value)" onchange="setVolume(this.value)"></input>
+    <a href="#" id="playPause" class="play playPause">Play</a>
+    <input class="setVolume" id="setVolume" type="range" min="0" max="100" step="1" oninput="setVolume(this.value)" onchange="setVolume(this.value)"></input>
+    <a href="#" id="settings-button" class="settings-button">Settings</a>
+    <div id="settings" class="settings hide">
+      <h2>Indstillinger</h2>
+      <a href="#" id="close-settings" class="close-settings">Luk</a>
+      <p>Lydkvalitet</p>
+      <ul class="audio-quality">
+        <li><a href="#" class="quality-selected" id="highQuality">Høj</a></li>
+        <li><a href="#" id="lowQuality">Lav</a></li>
+      </ul>
+    </div>
     <audio id="audioPlayer" controls src="" oninput="setVolume(this.value)" onchange="setVolume(this.value)"></audio>
   </article>
   <script src="controller.js"></script>

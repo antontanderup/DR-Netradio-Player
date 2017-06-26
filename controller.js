@@ -67,6 +67,7 @@ document.getElementById('playPause').addEventListener('click', function(){
   playPause();
 },false);
 
+// Pop up player
 document.getElementById('popUpPlayer').addEventListener('click', function(){
   var popUp = window.open(window.location.href, 'DR Radio Player', 'width=430,height=650');
 }, false);
@@ -75,7 +76,6 @@ document.getElementById('popUpPlayer').addEventListener('click', function(){
 function playDisplay() {
   document.getElementById(nowPlaying).className = nowPlaying.toLowerCase() + " now-playing";
 }
-
 
 // Load radio stations and event handlers
 function initRadio() {
@@ -112,23 +112,45 @@ function setVolume(val)
 
 // Change audio quality
 function setQuality(q) {
+  document.getElementsByClassName('quality-selected')[0].className = '';
   switch(q) {
       case "high":
           quality = 0;
           audioPlayer.src = radioStations[nowPlaying][quality].replace('.m3u','');
+          document.getElementById('highQuality').className = 'quality-selected';
           break;
       case "low":
           quality = 1;
           audioPlayer.src = radioStations[nowPlaying][quality].replace('.m3u','');
+          document.getElementById('lowQuality').className = 'quality-selected';
           break;
       case "apple":
           quality = 2;
           audioPlayer.src = radioStations[nowPlaying][quality];
+          document.getElementById('highQuality').className = 'quality-selected';
           break;
       default:
           console.log("Quality selection error");
   }
 }
+
+// Settings toggle
+document.getElementById('settings-button').addEventListener('click', function(){
+  var settings = document.getElementById('settings');
+  if (settings.className == 'settings hide') {
+    settings.className = 'settings';
+  } else {
+    settings.className = 'settings hide';
+  }
+}, false);
+
+document.getElementById('highQuality').addEventListener('click', function(){
+  setQuality('high');
+}, false);
+document.getElementById('lowQuality').addEventListener('click', function(){
+  setQuality('low');
+}, false);
+
 
 // Typekit
 (function(d) {

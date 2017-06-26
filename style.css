@@ -18,6 +18,7 @@ html {
 body {
   font-family: canada-type-gibson, sans-serif;
   background-color: black;
+  color:white;
 }
 
 .container {
@@ -43,6 +44,7 @@ h1 {
   background-repeat: no-repeat;
   background-size: 2.5rem;
   background-position: center center;
+  color:black;
 }
 
 .radio-menu {
@@ -143,11 +145,76 @@ li.nyheder.now-playing {background-color: rgba(255,30,0,1);}
 }
 
 .setVolume {
-  grid-column: col-start 4 / span 9;
+  grid-column: col-start 4 / span 7;
   background-color:black;
   height:5rem;
   padding-right: 1rem;
 }
+
+.settings-button {
+  grid-column: col-start 11 / span 2;
+  height:5rem;
+  background-image: url("icons/settings.svg");
+  background-repeat: no-repeat;
+  background-size: 2.5rem;
+  background-position: center center;
+  color:black;
+}
+
+.settings {
+  width: 75%;
+  position: fixed;
+  left: 50%;
+  margin-left: -37.5%;
+  margin-top:6rem;
+  background-color:rgba(255,255,255,.8);
+  color:black;
+  border-radius: 1rem;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.settings h2, .settings .close-settings {
+  height:4rem;
+  border-bottom:.1rem solid rgba(0,0,0,.2);
+}
+
+.settings h2 {
+  width:80%;
+  line-height: 4rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.settings .close-settings {
+  width:20%;
+  background-image: url("icons/close-button.svg");
+  background-repeat: no-repeat;
+  background-size: 2.2rem;
+  background-position: center center;
+  color:white;
+}
+
+.settings p, .settings ul {
+  margin:1rem;
+  line-height: 2rem;
+}
+
+.audio-quality a {
+    background-color: white;
+    padding: .5rem 1rem;
+    border-radius: .3rem;
+    margin-right:.5rem;
+}
+
+.hide { display:none;}
+
+.quality-selected {
+    font-weight: bold;
+    border: .1rem solid rgb(80, 80, 80);
+}
+
+
 
 /* Volume slider reset */
 input[type=range] {
