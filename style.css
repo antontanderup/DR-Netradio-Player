@@ -37,11 +37,12 @@ h1 {
 }
 
 .pop-up-button {
-  color:white;
   grid-column: col-start 11 / span 2;
-  text-align: center;
-  padding-top: 1.3rem;
   height:5rem;
+  background-image: url("icons/popup.svg");
+  background-repeat: no-repeat;
+  background-size: 2.5rem;
+  background-position: center center;
 }
 
 .radio-menu {
