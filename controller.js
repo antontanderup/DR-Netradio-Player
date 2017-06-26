@@ -67,6 +67,10 @@ document.getElementById('playPause').addEventListener('click', function(){
   playPause();
 },false);
 
+document.getElementById('popUpPlayer').addEventListener('click', function(){
+  var popUp = window.open(window.location.href, 'DR Radio Player', 'width=430,height=650');
+}, false);
+
 // Display currently playing station
 function playDisplay() {
   document.getElementById(nowPlaying).className = nowPlaying.toLowerCase() + " now-playing";
@@ -77,7 +81,6 @@ function playDisplay() {
 function initRadio() {
   for (var key in radioStations) {
     if (radioStations.hasOwnProperty(key)) {
-      console.log(key + " -> " + radioStations[key]);
       var thisStation = key;
       var newStationLi = document.createElement('li');
       var newStationLiA = document.createElement('a');

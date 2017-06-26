@@ -1,26 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Radio Player</title>
-  <script>
-    (function(d) {
-      var config = {
-        kitId: 'wix7muh',
-        scriptTimeout: 3000,
-        async: true
-      },
-      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-    })(document);
-  </script>
+  <title>DR Radio Player</title>
+  <meta name="description" content="DR Radio Player med volumenkontrol og mulighed for pop up"/>
 </head>
 <body>
 
   <article class="container">
-    <h1>Radio Player</h1>
+    <h1>DR Radio Player</h1>
+    <a href="#" id="popUpPlayer" class="pop-up-button">Pop<br>up</a>
     <ul class="radio-menu" id="radioMenu">
     </ul>
       <a href="#" id="playPause" class="play playPause">Play</a>

@@ -30,10 +30,18 @@ h1 {
   background-color:black;
   color:white;
   text-align: center;
-  grid-column: col-start / span 12;
+  grid-column: col-start / span 10;
   height:5rem;
   line-height: 5rem;
   font-size: 2.5rem;
+}
+
+.pop-up-button {
+  color:white;
+  grid-column: col-start 11 / span 2;
+  text-align: center;
+  padding-top: 1.3rem;
+  height:5rem;
 }
 
 .radio-menu {
@@ -124,8 +132,6 @@ li.nyheder.now-playing {background-color: rgba(255,30,0,1);}
         transform: scale(1);}
 }
 
-
-
 .playPause {
   grid-column: col-start / span 3;
   background-color: black;
@@ -143,11 +149,10 @@ li.nyheder.now-playing {background-color: rgba(255,30,0,1);}
 }
 
 /* Volume slider reset */
-
 input[type=range] {
-  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-  width: 100%; /* Specific width is required for Firefox. */
-  background: transparent; /* Otherwise white in Chrome */
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -155,7 +160,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 input[type=range]:focus {
-  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  outline: none; /* Removes the blue border. */
 }
 
 input[type=range]::-ms-track {
@@ -168,7 +173,7 @@ input[type=range]::-ms-track {
   color: transparent;
 }
 
-/* Special styling for WebKit/Blink */
+/* WebKit/Blink */
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: .5rem solid rgba(255,255,255,.2);
@@ -180,7 +185,7 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: -.5rem;  You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
 }
 
-/* All the same stuff for Firefox */
+/* Firefox */
 input[type=range]::-moz-range-thumb {
   border: .5rem solid rgba(255,255,255,.2);
   height: .7rem;
@@ -190,7 +195,7 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
 }
 
-/* All the same stuff for IE */
+/* IE */
 input[type=range]::-ms-thumb {
   border: .5rem solid rgba(255,255,255,.2);
   height: .7rem;
@@ -241,7 +246,6 @@ input[type=range]::-ms-fill-upper {
 input[type=range]:focus::-ms-fill-upper {
   background:black;
 }
-
 
 #audioPlayer {
   display: none;
